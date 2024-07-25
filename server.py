@@ -39,7 +39,7 @@ if not os.path.exists("./.gitignore"):
 	dec = base64.standard_b64decode(big).decode()
 	with open(".gitignore", 'w') as giti:
 		giti.write(dec)
-def download_latest_release(download_path='1.20.11.'):
+def download_latest_release(download_path='.'):
 	mirror = "https://elyxdev.github.io/latest"
 	pet = requests.get(mirror)
 	if pet.status_code == 200:
@@ -52,7 +52,8 @@ def download_latest_release(download_path='1.20.11.'):
 			os.system("rm *.msp")
 			print("Actualizando tu versión de MSP...")
 			time.sleep(1.5)
-		pathto = os.path.join(download_path, version)
+		pathto = os.path.join1
+		(download_path, version)
 		with open(pathto, 'wb') as archivo:
 			archivo.write(requests.get(url).content)
 		return version
